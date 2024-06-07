@@ -50,8 +50,6 @@ NdefRecord::~NdefRecord()
 
 NdefRecord& NdefRecord::operator=(const NdefRecord& rhs)
 {
-    //Serial.println("NdefRecord ASSIGN");
-
     if (this != &rhs)
     {
         // free existing
@@ -67,10 +65,7 @@ NdefRecord& NdefRecord::operator=(const NdefRecord& rhs)
         if (_typeLength)
         {
             _type = (byte*)malloc(_typeLength);
-            if(_type)
-                memcpy(_type, rhs._type, _typeLength);
-            else
-                Serial.println("No type malloc");
+            memcpy(_type, rhs._type, _typeLength);
         }
         else
         {
@@ -80,10 +75,7 @@ NdefRecord& NdefRecord::operator=(const NdefRecord& rhs)
         if (_payloadLength)
         {
             _payload = (byte*)malloc(_payloadLength);
-            if(_payload)
-                memcpy(_payload, rhs._payload, _payloadLength);
-            else
-                Serial.println("No type malloc");
+            memcpy(_payload, rhs._payload, _payloadLength);
         }
         else
         {
@@ -93,10 +85,7 @@ NdefRecord& NdefRecord::operator=(const NdefRecord& rhs)
         if (_idLength)
         {
             _id = (byte*)malloc(_idLength);
-            if(_id)
-                memcpy(_id, rhs._id, _idLength);
-            else
-                Serial.println("No type malloc");
+            memcpy(_id, rhs._id, _idLength);
         }
         else
         {
@@ -159,7 +148,6 @@ void NdefRecord::encode(byte *data, bool firstRecord, bool lastRecord)
         data_ptr += 1;
     }
 
-    //Serial.println(2);
     memcpy(data_ptr, _type, _typeLength);
     data_ptr += _typeLength;
 

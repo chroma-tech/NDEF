@@ -1,15 +1,13 @@
 {
-  "name": "NDEF_MFRC522",
+  "name": "NDEF",
   "version": "2.0.1",
-  "description": "Read and write NDEF messages to NFC tags and peers. Ported to the MFRC522 reader.",
-  "keywords": "ndef, mfrc522, rfid",
-  "repository":
-  {
+  "description": "Read and write NDEF messages to NFC tags and peers.",
+  "keywords": "ndef, rfid",
+  "repository": {
     "type": "git",
-    "url": "https://github.com/TheNitek/NDEF.git"
+    "url": "https://github.com/chroma-tech/NDEF.git"
   },
-  "authors":
-  [
+  "authors": [
     {
       "name": "Don Coleman",
       "email": "don.coleman@gmail.com",
@@ -24,9 +22,14 @@
   ],
   "license": "BSD-3-Clause",
   "homepage": "https://github.com/TheNitek/NDEF",
-  "dependencies": {
-    "miguelbalboa/MFRC522": "~1.4.7"
-  },
-  "frameworks": ["Arduino"],
-  "platforms": ["atmelavr", "ststm32", "espressif8266", "espressif32", "atmelsam"]
+  "frameworks": [
+    "Arduino"
+  ],
+  "platforms": [
+    "atmelavr",
+    "ststm32",
+    "espressif8266",
+    "espressif32",
+    "atmelsam"
+  ]
 }

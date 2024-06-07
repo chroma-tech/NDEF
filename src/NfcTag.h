@@ -8,7 +8,7 @@
 class NfcTag
 {
     public:
-        enum TagType { TYPE_MIFARE_CLASSIC = 0, TYPE_1, TYPE_2, TYPE_3, TYPE_4, TYPE_UNKNOWN = 99 };
+        enum TagType { TYPE_MIFARE_CLASSIC = 0, TYPE_1, TYPE_2, TYPE_3, TYPE_4, TYPE_5, TYPE_UNKNOWN = 99 };
         NfcTag(byte *uid, uint8_t uidLength, TagType tagType);
         NfcTag(byte *uid, uint8_t uidLength, TagType tagType, bool isFormatted);
         NfcTag(byte *uid, uint8_t uidLength, TagType tagType, NdefMessage& ndefMessage);

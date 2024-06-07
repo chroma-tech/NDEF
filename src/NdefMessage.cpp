@@ -98,7 +98,6 @@ NdefMessage::~NdefMessage()
 
 NdefMessage& NdefMessage::operator=(const NdefMessage& rhs)
 {
-
     if (this != &rhs)
     {
 
@@ -108,9 +107,10 @@ NdefMessage& NdefMessage::operator=(const NdefMessage& rhs)
             delete(_records[i]);
             _records[i] = (NdefRecord*)NULL;
         }
-
         _recordCount = 0;
-        for (unsigned int i = 0; i < _recordCount; i++)
+
+        // copy new records
+        for (unsigned int i = 0; i < rhs._recordCount; i++)
         {
             addRecord(*(rhs._records[i]));
         }
